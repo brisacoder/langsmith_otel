@@ -47,10 +47,10 @@ def main():
     # Start a root span for the client
     with tracer.start_as_current_span("client_root_span", kind=trace.SpanKind.CLIENT) as root_span:
 
-        #root_span.set_attribute("langsmith.span.kind", "LLM")
-        #root_span.set_attribute("langsmith.metadata.user_id", "user_123")
-        #root_span.set_attribute("gen_ai.system", "OpenAI")
-        #root_span.set_attribute("gen_ai.request.model", os.getenv("OPENAI_MODEL_NAME"))
+        # root_span.set_attribute("langsmith.span.kind", "LLM")
+        # root_span.set_attribute("langsmith.metadata.user_id", "user_123")
+        # root_span.set_attribute("gen_ai.system", "OpenAI")
+        # root_span.set_attribute("gen_ai.request.model", os.getenv("OPENAI_MODEL_NAME"))
         root_span.set_attribute("llm.request.type", "chat")
         root_span.set_attribute("http.method", "POST")
         root_span.set_attribute("http.url", "http://localhost:8123/stuff")
