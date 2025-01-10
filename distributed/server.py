@@ -2,9 +2,6 @@ import os
 import logging
 import uvicorn
 from fastapi import FastAPI, Request
-
-os.environ["OTEL_LOG_LEVEL"] = "DEBUG"
-
 # OpenTelemetry imports
 from opentelemetry import trace
 from opentelemetry.propagate import extract
